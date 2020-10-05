@@ -1,9 +1,12 @@
 import pygame
 from pygame.locals import *
 
-pygame.init()
-width, height = 640, 480
-screen= pygame.display.set_mode((width, height))
+try:
+	pygame.init()
+	width, height = 640, 480
+	screen= pygame.display.set_mode((width, height))
+except Exception as e:
+	raise e
 
 keys = [False, False, False, False]
 playerpos=[100,100]
@@ -12,7 +15,8 @@ playerpos=[100,100]
 player = pygame.image.load("resources/images/dude.png")
 grass = pygame.image.load("resources/images/grass.png")
 castle = pygame.image.load("resources/images/castle.png")
-
+bullet = pygame.image.load("resources/images/bullet.png")
+badguy = pygame.image.load("resources/images/badguy.png")
 
 while 1:
 	screen.fill(0)
@@ -52,10 +56,10 @@ while 1:
 			exit()
 
 	if keys[0]:
-		playerpos[1]-=5
+		playerpos[1]-=1
 	elif keys[2]:
-		playerpos[1]+=5
+		playerpos[1]+=1
 	if keys[1]:
-		playerpos[0]-=5
+		playerpos[0]-=1
 	elif keys[3]:
-		playerpos[0]+=5
+		playerpos[0]+=1

@@ -1,2 +1,3 @@
 # Game
-A basic game desing for fun
+A fun action game desinged in Python.
+Last updated : 07/10/2020.
